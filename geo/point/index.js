@@ -18,7 +18,7 @@ module.exports = class Point {
     this._options = Object.assign(this._defaults, options);
   }
 
-  get coordinates () {
+  get options () {
     return this._options;
   }
 
@@ -124,5 +124,9 @@ module.exports = class Point {
 
   get arrayInverted () {
     return [ this._coordinates.longitude, this._coordinates.latitude ];
+  }
+
+  toJSON () {
+    return this._coordinates;
   }
 }
