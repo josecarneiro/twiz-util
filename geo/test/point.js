@@ -2,7 +2,7 @@
 
 /* DEPENDENCIES */
 const expect = require('chai').expect;
-const Point = require('./../lib/point');
+const Point = require('./../point');
 
 /* EASY ID TESTS */
 describe('Point', () => {

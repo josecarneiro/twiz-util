@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-  point: require('./lib/point'),
-  region: require('./lib/region')
-}
+  Point: require('./point'),
+  Region: require('./region')
+};
