@@ -42,7 +42,7 @@ module.exports = class Point {
       }
     }
     // BROWSER GEOLOCATION
-    else if (coordinates.constructor && coordinates.constructor.name === 'Geolocation') {
+    else if (coordinates.constructor && coordinates.constructor.name === 'Geoposition') {
       this._coordinates = {
         latitude: coordinates.coords.latitude,
         longitude: coordinates.coords.longitude
