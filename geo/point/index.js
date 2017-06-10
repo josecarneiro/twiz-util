@@ -6,7 +6,8 @@ module.exports = class Point {
     this._options = {};
     this._defaults = {
       inverted: false,
-      format: 'normal'
+      format: 'normal',
+      precision: null
     };
     if (typeof options === 'boolean') options = { inverted: options };
     this.options = options;
@@ -72,6 +73,12 @@ module.exports = class Point {
     // THROW ERROR
     else {
       throw new Error('Wrong arguments.');
+    }
+    // OPTIONS PRECISION
+    if (typeof this._options.precision === 'number') {
+      Object.keys(this._coordinates).map(key => {
+        this._coordinates[key] = this._coordinates[key].toFixed(this._options.precision);
+      });
     }
     // ENSURE COORDINATES ARE NUMERIC
     if (typeof this._coordinates.latitude === 'string') {

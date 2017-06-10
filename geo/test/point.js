@@ -71,4 +71,12 @@ describe('Point', () => {
     expect(() => new Point([ 10, 25, 39 ]))
     .to.throw(Error, 'Wrong arguments.');
   });
+
+  /* PRECISION */
+
+  it('should generate set coordinates to precision', () => {
+    let point = new Point({ latitude: -5.123456, longitude: 25.654321 }, { precision: 3 });
+    expect(point.coordinates).to.have.property('latitude', -5.123);
+    expect(point.coordinates).to.have.property('longitude', 25.654);
+  });
 });
