@@ -1,4 +1,4 @@
-// https://codepen.io/josemc/pen/bREzJe?editors=0010
+const util = require('./util');
 
 module.exports = class {
   constructor () {
@@ -12,20 +12,20 @@ module.exports = class {
     // IF NO ARGUMENT IS NUMBER,
     // ASSUME IT'S THE NUMBER OF MILISECONDS SINCE THE EPOCH
     else if (arguments.length === 1 && typeof arguments[0] === 'number') {
-      this.date = this.convert(new Date(arguments[0]))
+      this.date = this.convert(new Date(arguments[0]));
     }
     // IF ARGUMENT IS A DATE OBJECT,
     // CONVERT THAT DATE OBJECT
     else if (arguments.length === 1 && arguments[0] instanceof Date) {
-      this.date = this.convert(arguments[0])
+      this.date = this.convert(arguments[0]);
     }
     // IF ARGUMENT IS STRING
     else if (arguments.length === 1 && typeof arguments[0] === 'string') {
-      this.date = this.convert(new Date(Date.parse(arguments[0])))
+      this.date = this.convert(new Date(Date.parse(arguments[0])));
     }
     // IF ARGUMENT IS OBJECT
     else if (arguments.length === 1 && typeof arguments[0] === 'object') {
-      this.date = this.date
+      this.date = util.destructure(arguments[0]);
     }
     // IF NONE OF THE ABOVE CONDITIONS IS MET,
     // THROW ERROR

@@ -30,6 +30,26 @@ describe('Time', () => {
     expect(time.date).to.have.property('milliseconds', 650);
   });
 
+  it('should generate date from object.', () => {
+    let time = new Time({
+      year: 2017,
+      month: 5,
+      day: 11,
+      hours: 17,
+      minutes: 26,
+      seconds: 24,
+      milliseconds: 650
+    });
+    expect(time).to.be.an.instanceof(Time);
+    expect(time.date).to.have.property('year', 2017);
+    expect(time.date).to.have.property('month', 5);
+    expect(time.date).to.have.property('day', 11);
+    expect(time.date).to.have.property('hours', 17);
+    expect(time.date).to.have.property('minutes', 26);
+    expect(time.date).to.have.property('seconds', 24);
+    expect(time.date).to.have.property('milliseconds', 650);
+  });
+
   it('should generate time and convert to Date object.', () => {
     let time = new Time().revert;
     expect(time).to.be.an.instanceof(Date);
