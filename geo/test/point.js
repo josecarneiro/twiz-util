@@ -80,10 +80,21 @@ describe('Point', () => {
     expect(point.coordinates).to.have.property('longitude', 25.654);
   });
 
-  it('stringify to JSON should only output coordinates', () => {
+  it('should stringify to JSON should only output coordinates', () => {
     let point = new Point({ latitude: -30, longitude: 60 });
     let parsed = JSON.parse(JSON.stringify(point));
     expect(parsed).to.have.property('latitude', -30);
     expect(parsed).to.have.property('longitude', 60);
-  })
+  });
+
+  /* GET UTIL VERSION */
+
+  it('should get correct package version', () => {
+    let version = Point.version();
+    expect(version).to.equal(require('./../package').version);
+  });
+
+  it('object should have "Point" name', () => {
+    expect(new Point([ 10, 10 ]).name).to.equal('Point');
+  });
 });

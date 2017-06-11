@@ -1,7 +1,11 @@
 'use strict';
 
+const version = require('./../package').version;
+
 module.exports = class Point {
   constructor (coordinates, options) {
+    this.name = 'Point';
+    this.version = version;
     this._coordinates = {};
     this._options = {};
     this._defaults = {
@@ -66,7 +70,7 @@ module.exports = class Point {
       }
     }
     // OTHER GEO POINT OBJECT
-    else if (coordinates.constructor && coordinates.constructor.name === 'Point') {
+    else if (coordinates && coordinates.name === 'Point') {
       this._coordinates = coordinates.coordinates;
     }
     // IF NONE OF THE CONDITIONS MATCH,
@@ -128,5 +132,9 @@ module.exports = class Point {
 
   toJSON () {
     return this._coordinates;
+  }
+
+  static version () {
+    return version;
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "twiz-util",
-  "version": "0.4.1",
-  "description": "Twiz utilities",
+  "name": "twiz-util-geo",
+  "version": "0.1.0",
+  "description": "Twiz geo utilities",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/index.js"
