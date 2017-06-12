@@ -1,5 +1,3 @@
-'use strict';
-
 describe('Utils Tests', () => {
   /* BEFORE AND AFTER TEST HOOKS */
   before(done => {
@@ -11,5 +9,6 @@ describe('Utils Tests', () => {
   });
 
   /* REQUIRE TESTS */
-  require('./time');
+  require('./instant');
+  require('./interval');
 });

@@ -1,4 +1,7 @@
+'use strict';
+
+// EXPORTS ESLINT CONFIG
 module.exports = {
-  root: true,
-  extends: 'eslint-config-twiz'
+  extends: 'twiz',
+  root: true
 };
