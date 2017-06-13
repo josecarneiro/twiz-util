@@ -6,7 +6,6 @@ module.exports = class Interval {
     // CAN TAKE EITHER
     //  - A START AND AN END OBJECT, WITH AN OPTIONAL OPTIONS OBJECT
     //  - AN ARRAY OF TWO OBJECTS, WITH OPTIONAL OPTIONS
-    //  -
     if (arguments.length === 1 && arguments[0] instanceof Array) {
       this.interval = arguments[0];
     } else if (arguments.length === 1 && (arguments[0].hasOwnProperty('start') || arguments[0].hasOwnProperty('end'))) {

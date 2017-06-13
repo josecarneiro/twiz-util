@@ -6,11 +6,14 @@
 			[
 				"package-lock.json",
 				"time/test/mocha.opts",
-				"yarn.lock"
+				"yarn.lock",
+				// ".eslintrc.js",
+				".gitignore",
+				"README.md"
 			],
 			"folder_exclude_patterns":
 			[
-				// "node_modules"
+				"node_modules"
 			],
 			"path": "."
 		}

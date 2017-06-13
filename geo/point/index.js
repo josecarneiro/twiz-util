@@ -2,7 +2,7 @@ const version = require('./../package').version;
 
 module.exports = class Point {
   constructor (coordinates, options) {
-    // this.name = 'Point';
+    this.name = 'Point';
     this.version = version;
     this._coordinates = {};
     this._options = {};

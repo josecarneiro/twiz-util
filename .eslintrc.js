@@ -3,5 +3,8 @@
 // EXPORTS ESLINT CONFIG
 module.exports = {
   extends: 'twiz',
-  root: true
+  root: true,
+  rules: {
+    strict: [ 2, 'global' ]
+  }
 };
