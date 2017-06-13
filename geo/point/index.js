@@ -1,10 +1,8 @@
-'use strict';
-
 const version = require('./../package').version;
 
 module.exports = class Point {
   constructor (coordinates, options) {
-    this.name = 'Point';
+    // this.name = 'Point';
     this.version = version;
     this._coordinates = {};
     this._options = {};
@@ -27,12 +25,13 @@ module.exports = class Point {
   }
 
   set coordinates (coordinates) {
+    /* eslint brace-style: 0 */
     if (!coordinates) {
       throw new Error('Wrong arguments.');
     }
     // ARRAY WITH LONGITUDE AND LATITUDE
     else if (coordinates instanceof Array && coordinates.length === 2) {
-      if (coordinates)
+      // if (coordinates)
       if (this._options.inverted) {
         this._coordinates = {
           latitude: coordinates[1],
@@ -50,24 +49,24 @@ module.exports = class Point {
       this._coordinates = {
         latitude: coordinates.coords.latitude,
         longitude: coordinates.coords.longitude
-      }
+      };
     }
     // IF SIMPLE LATITUDE AND LONGITUDE OBJECT
     else if (coordinates.lat && coordinates.long) {
       this._coordinates = {
         latitude: coordinates.lat,
         longitude: coordinates.long
-      }
+      };
     } else if (coordinates.lat && coordinates.lng) {
       this._coordinates = {
         latitude: coordinates.lat,
         longitude: coordinates.lng
-      }
+      };
     } else if (coordinates.latitude && coordinates.longitude) {
       this._coordinates = {
         latitude: coordinates.latitude,
         longitude: coordinates.longitude
-      }
+      };
     }
     // OTHER GEO POINT OBJECT
     else if (coordinates && coordinates.name === 'Point') {
@@ -93,15 +92,15 @@ module.exports = class Point {
     }
     // VERIFY COORDINATES ARE VALID
     if (
-      typeof this._coordinates.latitude !== 'number',
-      typeof this._coordinates.longitude !== 'number',
+      typeof this._coordinates.latitude !== 'number' ||
+      typeof this._coordinates.longitude !== 'number' ||
       this._coordinates.latitude > 90 ||
       this._coordinates.latitude < -90 ||
       this._coordinates.longitude > 180 ||
       this._coordinates.longitude < -180
     ) {
       throw new Error('Coordinates are invalid.');
-    } 
+    }
   }
 
   get coordinates () {
@@ -112,14 +111,14 @@ module.exports = class Point {
     return {
       lat: this._coordinates.latitude,
       lng: this._coordinates.longitude
-    }
+    };
   }
 
   get short () {
     return {
       lat: this._coordinates.latitude,
       long: this._coordinates.longitude
-    }
+    };
   }
 
   get array () {
@@ -137,4 +136,4 @@ module.exports = class Point {
   static version () {
     return version;
   }
-}
+};
